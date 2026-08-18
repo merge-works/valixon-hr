@@ -148,6 +148,31 @@
   .tool-error{display:none;background:#FDE8ED;border:1px solid var(--rose);color:var(--teal-dark);padding:12px 16px;border-radius:10px;font-size:14px;margin-top:14px;font-weight:600;}
   .tool-error.on{display:block;}
 
+  /* DEMO CARD (primary for first-timers) */
+  .demo-hero-card{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;border-radius:22px;padding:32px;display:flex;gap:22px;align-items:center;margin-top:48px;box-shadow:var(--shadow);}
+  .demo-hero-icon{width:66px;height:66px;border-radius:18px;background:linear-gradient(135deg,#74162F,#A92B4C);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 12px 24px -8px rgba(143,29,61,.6);}
+  .demo-hero-body{flex:1;min-width:0;}
+  .demo-hero-body h3{font-size:22px;font-weight:800;margin-bottom:6px;color:#fff;}
+  body.th .demo-hero-body h3{font-size:20px;}
+  .demo-hero-body p{font-size:15px;color:#C4D2E0;line-height:1.5;margin-bottom:18px;}
+  .demo-hero-body .btn-primary{padding:13px 24px;font-size:15px;}
+
+  /* OWN DATA PATH */
+  .own-header{text-align:center;margin-top:64px;margin-bottom:26px;}
+  .own-header .kicker{color:var(--teal-dark);margin-bottom:10px;}
+  .own-header h3{font-size:26px;font-weight:800;color:var(--navy);margin-bottom:8px;letter-spacing:-.5px;}
+  body.th .own-header h3{font-size:22px;letter-spacing:0;}
+  .own-header p{font-size:15px;color:var(--muted);max-width:520px;margin:0 auto;}
+  .mini-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px;}
+  .mini-step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;gap:14px;align-items:flex-start;transition:.15s;}
+  .mini-step:hover{border-color:var(--teal);transform:translateY(-2px);}
+  .mini-step .n{width:34px;height:34px;border-radius:50%;background:var(--mint);color:var(--teal-dark);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .mini-step .body{flex:1;min-width:0;}
+  .mini-step h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:5px;}
+  .mini-step p{font-size:13.5px;color:var(--muted);line-height:1.55;margin-bottom:6px;}
+  .mini-step a{font-size:13.5px;font-weight:700;color:var(--teal);}
+  .mini-step a:hover{color:var(--teal-dark);}
+
   /* REPORT OUTPUT */
   .report-out{display:none;margin-top:36px;background:#fff;border-radius:22px;padding:38px;box-shadow:var(--shadow-sm);border:1px solid var(--line);}
   .report-out.on{display:block;}
@@ -237,7 +262,8 @@
   @media(max-width:900px){
     .hero-grid,.offer-grid{grid-template-columns:1fr;gap:40px;}
     .tier-grid{grid-template-columns:1fr;gap:32px;}
-    .dims-grid,.steps{grid-template-columns:1fr;}
+    .dims-grid,.steps,.mini-steps{grid-template-columns:1fr;}
+    .demo-hero-card{flex-direction:column;text-align:center;padding:26px 22px;}
     .nav-links{display:none;}
     .hero h1{font-size:36px;}
     body.th .hero h1{font-size:30px;}
@@ -432,6 +458,51 @@
       <h2 data-i18n="tool.title">The Valixon HR Report Generator.</h2>
       <p class="lead" data-i18n="tool.sub">Paste your team's peer ratings (and optionally the CEO's), pick a weighting, and get a shareable summary in seconds. Free for anyone.</p>
     </div>
+
+    <!-- Demo card: primary entry point for first-time visitors -->
+    <div class="demo-hero-card">
+      <div class="demo-hero-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
+      <div class="demo-hero-body">
+        <h3 data-i18n="demo.title">First time here? See the demo.</h3>
+        <p data-i18n="demo.desc">Try the Report Generator with real dental clinic sample data. In 3 seconds you'll see exactly what your monthly bonus report will look like.</p>
+        <button class="btn btn-primary" onclick="loadSampleAndGenerate()" data-i18n="demo.cta">Show me the demo →</button>
+      </div>
+    </div>
+
+    <!-- Own data path: 3-step guide for users who have their own team data -->
+    <div class="own-header">
+      <div class="kicker" data-i18n="own.kicker">Have your own team's data?</div>
+      <h3 data-i18n="own.title">Three simple steps to your bonus report.</h3>
+      <p data-i18n="own.sub">Set up once, then it takes 30 seconds every month.</p>
+    </div>
+
+    <div class="mini-steps">
+      <div class="mini-step">
+        <div class="n">1</div>
+        <div class="body">
+          <h4 data-i18n="own.s1.t">Get the template</h4>
+          <p data-i18n="own.s1.d">We give you the ready-to-use Google Form + Sheet, matched to the Valixon rubric.</p>
+          <a href="#offer" data-i18n="own.s1.cta">Request template →</a>
+        </div>
+      </div>
+      <div class="mini-step">
+        <div class="n">2</div>
+        <div class="body">
+          <h4 data-i18n="own.s2.t">Your team fills it out</h4>
+          <p data-i18n="own.s2.d">Anonymous monthly peer ratings. You (or the CEO) submit executive ratings separately.</p>
+        </div>
+      </div>
+      <div class="mini-step">
+        <div class="n">3</div>
+        <div class="body">
+          <h4 data-i18n="own.s3.t">Copy → paste → report</h4>
+          <p data-i18n="own.s3.d">Open your Sheet, select all rows, copy. Paste in the box below. Click Generate.</p>
+        </div>
+      </div>
+    </div>
+
     <div class="tool-card">
       <div class="tool-block">
         <label class="tool-label" data-i18n="tool.peer.label">Peer ratings · paste from your Google Sheet (CSV or TSV)</label>
@@ -704,10 +775,23 @@ const translations = {
     "s4.t":"Get your bonus report","s4.d":"Auto-generated summary you can share with the team and use to decide bonuses that same week.",
     "tool.kicker":"Try it live","tool.title":"The Valixon HR Report Generator.",
     "tool.sub":"Paste your team's peer ratings (and optionally the CEO's), pick a weighting, and get a shareable summary in seconds. Free for anyone.",
+    "demo.title":"First time here? See the demo.",
+    "demo.desc":"Try the Report Generator with real dental clinic sample data. In 3 seconds you'll see exactly what your monthly bonus report will look like.",
+    "demo.cta":"Show me the demo →",
+    "own.kicker":"Have your own team's data?",
+    "own.title":"Three simple steps to your bonus report.",
+    "own.sub":"Set up once, then it takes 30 seconds every month.",
+    "own.s1.t":"Get the template",
+    "own.s1.d":"We give you the ready-to-use Google Form + Sheet, matched to the Valixon rubric.",
+    "own.s1.cta":"Request template →",
+    "own.s2.t":"Your team fills it out",
+    "own.s2.d":"Anonymous monthly peer ratings. You (or the CEO) submit executive ratings separately.",
+    "own.s3.t":"Copy → paste → report",
+    "own.s3.d":"Open your Sheet, select all rows, copy. Paste in the box below. Click Generate.",
     "tool.peer.label":"Peer ratings · paste from your Google Sheet (CSV or TSV)",
-    "tool.peer.hint":"Include the header row. Each column named as \"Category [Employee]\". Include the Timestamp column if present.",
+    "tool.peer.hint":"Copy all rows from your Google Sheet and paste here. Or click 'Load sample data' below.",
     "tool.ceo.label":"CEO ratings (optional) · paste from your CEO Google Sheet",
-    "tool.ceo.hint":"Same column format. One row only (the CEO's ratings for the whole team). If left blank, the report uses peer ratings only.",
+    "tool.ceo.hint":"Optional. Same format, one row (the CEO's ratings). Leave blank to use peer ratings only.",
     "tool.weighting.label":"Weighting (CEO vs Peer)",
     "tool.w1":"CEO only (100 / 0)","tool.w2":"CEO-lean, default (60 / 40)","tool.w3":"Balanced (50 / 50)","tool.w4":"Peer-lean (40 / 60)","tool.w5":"Peer only (0 / 100)",
     "tool.period.label":"Report period (optional label)","tool.period.ph":"July 2026",
@@ -793,10 +877,23 @@ const translations = {
     "s4.t":"รับรายงานโบนัส","s4.d":"สรุปอัตโนมัติที่พร้อมแชร์ให้ทีม และใช้ตัดสินใจโบนัสได้ในสัปดาห์เดียวกัน",
     "tool.kicker":"ทดลองใช้ทันที","tool.title":"เครื่องมือสร้างรายงาน Valixon HR",
     "tool.sub":"วางคะแนนประเมินของทีม (และ CEO ถ้ามี) เลือกน้ำหนัก แล้วรับสรุปที่แชร์ได้ในไม่กี่วินาที ใช้งานฟรีสำหรับทุกคน",
+    "demo.title":"มาครั้งแรก? ลองดูตัวอย่างเลย",
+    "demo.desc":"ลองใช้เครื่องมือสร้างรายงานกับข้อมูลตัวอย่างของคลินิกทันตกรรมจริง ใน 3 วินาที คุณจะเห็นว่ารายงานโบนัสรายเดือนของคุณจะออกมาแบบไหน",
+    "demo.cta":"ดูตัวอย่างเลย →",
+    "own.kicker":"มีข้อมูลของทีมตัวเองแล้ว?",
+    "own.title":"3 ขั้นตอนง่ายๆ สู่รายงานโบนัสของคุณ",
+    "own.sub":"ตั้งค่าครั้งเดียว แล้วใช้เวลาแค่ 30 วินาทีต่อเดือน",
+    "own.s1.t":"รับเทมเพลตของเรา",
+    "own.s1.d":"เราจะให้ Google Form + Sheet ที่พร้อมใช้งานทันที ตรงกับเกณฑ์ของ Valixon",
+    "own.s1.cta":"ขอเทมเพลต →",
+    "own.s2.t":"ทีมของคุณกรอกแบบฟอร์ม",
+    "own.s2.d":"ประเมินเพื่อนร่วมงานแบบไม่เปิดเผยชื่อรายเดือน คุณ (หรือ CEO) ส่งคะแนนผู้บริหารแยกต่างหาก",
+    "own.s3.t":"คัดลอก → วาง → รับรายงาน",
+    "own.s3.d":"เปิด Google Sheet ของคุณ เลือกทุกแถว คัดลอก แล้ววางในช่องด้านล่าง กด สร้างรายงาน",
     "tool.peer.label":"คะแนนเพื่อนร่วมงาน · วางจาก Google Sheet ของคุณ (CSV หรือ TSV)",
-    "tool.peer.hint":"รวมแถวหัวตารางด้วย ทุกคอลัมน์ตั้งชื่อในรูปแบบ \"หัวข้อ [ชื่อพนักงาน]\" รวมคอลัมน์ Timestamp ถ้ามี",
+    "tool.peer.hint":"คัดลอกทุกแถวจาก Google Sheet ของคุณ แล้ววางที่นี่ หรือกด 'โหลดข้อมูลตัวอย่าง' ด้านล่าง",
     "tool.ceo.label":"คะแนน CEO (ไม่บังคับ) · วางจาก Google Sheet ของ CEO",
-    "tool.ceo.hint":"ใช้รูปแบบคอลัมน์เดียวกัน เพียงแถวเดียว (คะแนน CEO สำหรับทั้งทีม) ถ้าเว้นว่าง รายงานจะใช้คะแนนเพื่อนร่วมงานอย่างเดียว",
+    "tool.ceo.hint":"ไม่บังคับ ใช้รูปแบบเดียวกัน แถวเดียว (คะแนน CEO) เว้นว่างเพื่อใช้คะแนนเพื่อนร่วมงานอย่างเดียว",
     "tool.weighting.label":"น้ำหนัก (CEO เทียบเพื่อนร่วมงาน)",
     "tool.w1":"CEO อย่างเดียว (100 / 0)","tool.w2":"เน้น CEO ค่าเริ่มต้น (60 / 40)","tool.w3":"สมดุล (50 / 50)","tool.w4":"เน้นเพื่อนร่วมงาน (40 / 60)","tool.w5":"เพื่อนร่วมงานอย่างเดียว (0 / 100)",
     "tool.period.label":"ช่วงเวลาของรายงาน (ไม่บังคับ)","tool.period.ph":"กรกฎาคม 2026",
@@ -872,6 +969,11 @@ function loadSample(){
   document.getElementById('ceo-csv').value = SAMPLE_CEO;
   document.getElementById('period').value = document.body.classList.contains('th') ? 'กรกฎาคม 2026' : 'July 2026';
   hideError();
+}
+
+function loadSampleAndGenerate(){
+  loadSample();
+  setTimeout(generateReport, 50);
 }
 
 function clearAll(){
