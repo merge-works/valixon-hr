@@ -311,10 +311,10 @@
       <table class="rc-table">
         <thead><tr><th data-i18n="rc.emp">Employee</th><th style="text-align:right" data-i18n="rc.score">Score</th></tr></thead>
         <tbody>
-          <tr><td class="rc-name">แจง <span style="color:#D4A017">★</span></td><td class="rc-score">4.31<div class="rc-bar"><div class="rc-bar-fill" style="width:86%"></div></div></td></tr>
-          <tr><td class="rc-name">ป๊อบ</td><td class="rc-score">4.07<div class="rc-bar"><div class="rc-bar-fill" style="width:81%"></div></div></td></tr>
-          <tr><td class="rc-name">เบนซ์</td><td class="rc-score">4.07<div class="rc-bar"><div class="rc-bar-fill" style="width:81%"></div></div></td></tr>
-          <tr><td class="rc-name">ลีโอ</td><td class="rc-score">3.93<div class="rc-bar"><div class="rc-bar-fill" style="width:79%"></div></div></td></tr>
+          <tr><td class="rc-name">แนน <span style="color:#D4A017">★</span></td><td class="rc-score">4.31<div class="rc-bar"><div class="rc-bar-fill" style="width:86%"></div></div></td></tr>
+          <tr><td class="rc-name">ฝน</td><td class="rc-score">4.07<div class="rc-bar"><div class="rc-bar-fill" style="width:81%"></div></div></td></tr>
+          <tr><td class="rc-name">เมย์</td><td class="rc-score">4.07<div class="rc-bar"><div class="rc-bar-fill" style="width:81%"></div></div></td></tr>
+          <tr><td class="rc-name">นิว</td><td class="rc-score">3.93<div class="rc-bar"><div class="rc-bar-fill" style="width:79%"></div></div></td></tr>
         </tbody>
       </table>
       <div class="rc-footer">
@@ -436,13 +436,13 @@
       <div class="tool-block">
         <label class="tool-label" data-i18n="tool.peer.label">Peer ratings · paste from your Google Sheet (CSV or TSV)</label>
         <div class="tool-hint" data-i18n="tool.peer.hint">Include the header row. Each column named as "Category [Employee]". Include the Timestamp column if present.</div>
-        <textarea class="tool-area" id="peer-csv" placeholder="Timestamp&#9;Luxury Service Mindset [ปอนด์]&#9;Luxury Service Mindset [ป๊อบ]&#9;..." spellcheck="false"></textarea>
+        <textarea class="tool-area" id="peer-csv" placeholder="Timestamp&#9;Luxury Service Mindset [น้ำ]&#9;Luxury Service Mindset [ฝน]&#9;..." spellcheck="false"></textarea>
       </div>
 
       <div class="tool-block">
         <label class="tool-label" data-i18n="tool.ceo.label">CEO ratings (optional) · paste from your CEO Google Sheet</label>
         <div class="tool-hint" data-i18n="tool.ceo.hint">Same column format. One row only (the CEO's ratings for the whole team). If left blank, the report uses peer ratings only.</div>
-        <textarea class="tool-area" id="ceo-csv" placeholder="Timestamp&#9;Luxury Service Mindset [ปอนด์]&#9;..." spellcheck="false" style="min-height:70px;"></textarea>
+        <textarea class="tool-area" id="ceo-csv" placeholder="Timestamp&#9;Luxury Service Mindset [น้ำ]&#9;..." spellcheck="false" style="min-height:70px;"></textarea>
       </div>
 
       <div class="tool-row">
@@ -642,7 +642,7 @@
 
 <script>
 // SAMPLE DATA — Dr. Kook's real July dataset
-const SAMPLE_PEER = `Timestamp\tLuxury Service Mindset [ปอนด์]\tLuxury Service Mindset [ป๊อบ]\tLuxury Service Mindset [เบนซ์]\tLuxury Service Mindset [ทราย]\tLuxury Service Mindset [ลีโอ]\tLuxury Service Mindset [แจง]\tTeamwork in Treatment Flow [ปอนด์]\tTeamwork in Treatment Flow [ป๊อบ]\tTeamwork in Treatment Flow [เบนซ์]\tTeamwork in Treatment Flow [ทราย]\tTeamwork in Treatment Flow [ลีโอ]\tTeamwork in Treatment Flow [แจง]\tPatient Emotional Care [ปอนด์]\tPatient Emotional Care [ป๊อบ]\tPatient Emotional Care [เบนซ์]\tPatient Emotional Care [ทราย]\tPatient Emotional Care [ลีโอ]\tPatient Emotional Care [แจง]\tProfessionalism [ปอนด์]\tProfessionalism [ป๊อบ]\tProfessionalism [เบนซ์]\tProfessionalism [ทราย]\tProfessionalism [ลีโอ]\tProfessionalism [แจง]\tOwnership Mindset [ปอนด์]\tOwnership Mindset [ป๊อบ]\tOwnership Mindset [เบนซ์]\tOwnership Mindset [ทราย]\tOwnership Mindset [ลีโอ]\tOwnership Mindset [แจง]\tCalm Under Pressure [ปอนด์]\tCalm Under Pressure [ป๊อบ]\tCalm Under Pressure [เบนซ์]\tCalm Under Pressure [ทราย]\tCalm Under Pressure [ลีโอ]\tCalm Under Pressure [แจง]\tAesthetic & Detail Orientation [ปอนด์]\tAesthetic & Detail Orientation [ป๊อบ]\tAesthetic & Detail Orientation [เบนซ์]\tAesthetic & Detail Orientation [ทราย]\tAesthetic & Detail Orientation [ลีโอ]\tAesthetic & Detail Orientation [แจง]
+const SAMPLE_PEER = `Timestamp\tLuxury Service Mindset [น้ำ]\tLuxury Service Mindset [ฝน]\tLuxury Service Mindset [เมย์]\tLuxury Service Mindset [โอ]\tLuxury Service Mindset [นิว]\tLuxury Service Mindset [แนน]\tTeamwork in Treatment Flow [น้ำ]\tTeamwork in Treatment Flow [ฝน]\tTeamwork in Treatment Flow [เมย์]\tTeamwork in Treatment Flow [โอ]\tTeamwork in Treatment Flow [นิว]\tTeamwork in Treatment Flow [แนน]\tPatient Emotional Care [น้ำ]\tPatient Emotional Care [ฝน]\tPatient Emotional Care [เมย์]\tPatient Emotional Care [โอ]\tPatient Emotional Care [นิว]\tPatient Emotional Care [แนน]\tProfessionalism [น้ำ]\tProfessionalism [ฝน]\tProfessionalism [เมย์]\tProfessionalism [โอ]\tProfessionalism [นิว]\tProfessionalism [แนน]\tOwnership Mindset [น้ำ]\tOwnership Mindset [ฝน]\tOwnership Mindset [เมย์]\tOwnership Mindset [โอ]\tOwnership Mindset [นิว]\tOwnership Mindset [แนน]\tCalm Under Pressure [น้ำ]\tCalm Under Pressure [ฝน]\tCalm Under Pressure [เมย์]\tCalm Under Pressure [โอ]\tCalm Under Pressure [นิว]\tCalm Under Pressure [แนน]\tAesthetic & Detail Orientation [น้ำ]\tAesthetic & Detail Orientation [ฝน]\tAesthetic & Detail Orientation [เมย์]\tAesthetic & Detail Orientation [โอ]\tAesthetic & Detail Orientation [นิว]\tAesthetic & Detail Orientation [แนน]
 7/3/2026 10:51:04\t3\t3\t3\t3\t3\t3\t2\t4\t4\t2\t3\t4\t3\t3\t3\t2\t3\t3\t2\t3\t3\t2\t3\t3\t3\t4\t4\t3\t4\t4\t3\t3\t3\t2\t3\t3\t3\t4\t4\t2\t3\t4
 7/3/2026 11:01:05\t4\t4\t4\t4\t4\t4\t3\t5\t5\t4\t4\t5\t4\t4\t4\t4\t4\t4\t3\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4\t4
 7/3/2026 11:10:10\t3\t4\t4\t3\t5\t4\t3\t4\t4\t2\t3\t5\t3\t4\t4\t3\t4\t4\t1\t5\t4\t4\t5\t5\t1\t5\t5\t1\t4\t5\t3\t5\t5\t2\t5\t5\t4\t4\t4\t4\t4\t4
@@ -650,7 +650,7 @@ const SAMPLE_PEER = `Timestamp\tLuxury Service Mindset [ปอนด์]\tLuxury
 7/3/2026 17:10:45\t5\t5\t5\t5\t5\t5\t5\t5\t5\t4\t4\t5\t5\t5\t5\t5\t5\t5\t4\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5\t5
 7/3/2026 19:39:08\t4\t4\t4\t4\t4\t4\t3\t4\t4\t3\t4\t4\t3\t3\t3\t3\t3\t3\t2\t4\t3\t3\t4\t4\t3\t4\t4\t3\t4\t4\t3\t3\t4\t3\t3\t3\t2\t4\t4\t3\t4\t4`;
 
-const SAMPLE_CEO = `Timestamp\tLuxury Service Mindset [ปอนด์]\tLuxury Service Mindset [ป๊อบ]\tLuxury Service Mindset [เบนซ์]\tLuxury Service Mindset [ทราย]\tLuxury Service Mindset [ลีโอ]\tLuxury Service Mindset [แจง]\tTeamwork in Treatment Flow [ปอนด์]\tTeamwork in Treatment Flow [ป๊อบ]\tTeamwork in Treatment Flow [เบนซ์]\tTeamwork in Treatment Flow [ทราย]\tTeamwork in Treatment Flow [ลีโอ]\tTeamwork in Treatment Flow [แจง]\tPatient Emotional Care [ปอนด์]\tPatient Emotional Care [ป๊อบ]\tPatient Emotional Care [เบนซ์]\tPatient Emotional Care [ทราย]\tPatient Emotional Care [ลีโอ]\tPatient Emotional Care [แจง]\tProfessionalism [ปอนด์]\tProfessionalism [ป๊อบ]\tProfessionalism [เบนซ์]\tProfessionalism [ทราย]\tProfessionalism [ลีโอ]\tProfessionalism [แจง]\tOwnership Mindset [ปอนด์]\tOwnership Mindset [ป๊อบ]\tOwnership Mindset [เบนซ์]\tOwnership Mindset [ทราย]\tOwnership Mindset [ลีโอ]\tOwnership Mindset [แจง]\tCalm Under Pressure [ปอนด์]\tCalm Under Pressure [ป๊อบ]\tCalm Under Pressure [เบนซ์]\tCalm Under Pressure [ทราย]\tCalm Under Pressure [ลีโอ]\tCalm Under Pressure [แจง]\tAesthetic & Detail Orientation [ปอนด์]\tAesthetic & Detail Orientation [ป๊อบ]\tAesthetic & Detail Orientation [เบนซ์]\tAesthetic & Detail Orientation [ทราย]\tAesthetic & Detail Orientation [ลีโอ]\tAesthetic & Detail Orientation [แจง]
+const SAMPLE_CEO = `Timestamp\tLuxury Service Mindset [น้ำ]\tLuxury Service Mindset [ฝน]\tLuxury Service Mindset [เมย์]\tLuxury Service Mindset [โอ]\tLuxury Service Mindset [นิว]\tLuxury Service Mindset [แนน]\tTeamwork in Treatment Flow [น้ำ]\tTeamwork in Treatment Flow [ฝน]\tTeamwork in Treatment Flow [เมย์]\tTeamwork in Treatment Flow [โอ]\tTeamwork in Treatment Flow [นิว]\tTeamwork in Treatment Flow [แนน]\tPatient Emotional Care [น้ำ]\tPatient Emotional Care [ฝน]\tPatient Emotional Care [เมย์]\tPatient Emotional Care [โอ]\tPatient Emotional Care [นิว]\tPatient Emotional Care [แนน]\tProfessionalism [น้ำ]\tProfessionalism [ฝน]\tProfessionalism [เมย์]\tProfessionalism [โอ]\tProfessionalism [นิว]\tProfessionalism [แนน]\tOwnership Mindset [น้ำ]\tOwnership Mindset [ฝน]\tOwnership Mindset [เมย์]\tOwnership Mindset [โอ]\tOwnership Mindset [นิว]\tOwnership Mindset [แนน]\tCalm Under Pressure [น้ำ]\tCalm Under Pressure [ฝน]\tCalm Under Pressure [เมย์]\tCalm Under Pressure [โอ]\tCalm Under Pressure [นิว]\tCalm Under Pressure [แนน]\tAesthetic & Detail Orientation [น้ำ]\tAesthetic & Detail Orientation [ฝน]\tAesthetic & Detail Orientation [เมย์]\tAesthetic & Detail Orientation [โอ]\tAesthetic & Detail Orientation [นิว]\tAesthetic & Detail Orientation [แนน]
 7/31/2026 09:00:00\t4\t4\t4\t3\t4\t5\t3\t5\t5\t3\t4\t5\t4\t4\t4\t3\t4\t5\t3\t4\t4\t3\t4\t5\t3\t5\t5\t3\t4\t5\t4\t4\t4\t3\t4\t5\t4\t4\t4\t3\t4\t5`;
 
 const translations = {
