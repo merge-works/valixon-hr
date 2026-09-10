@@ -738,12 +738,12 @@
         <div class="form-section">
           <div class="section-label" data-i18n="form.s1">1. About your clinic</div>
           <div class="form-row">
-            <div class="field"><label data-i18n="form.clinic">Clinic name</label><input type="text" required /></div>
-            <div class="field"><label data-i18n="form.loc">City / Country</label><input type="text" required data-i18n-ph="form.loc.ph" placeholder="Bangkok, Thailand" /></div>
+            <div class="field"><label data-i18n="form.clinic">Clinic name</label><input name="clinic" type="text" required /></div>
+            <div class="field"><label data-i18n="form.loc">City / Country</label><input name="location" type="text" required data-i18n-ph="form.loc.ph" placeholder="Bangkok, Thailand" /></div>
           </div>
           <div class="form-row">
-            <div class="field"><label data-i18n="form.branches">Branches</label><input type="number" min="1" required placeholder="1" /></div>
-            <div class="field"><label data-i18n="form.team">Team size (staff)</label><input type="number" min="1" required placeholder="6" /></div>
+            <div class="field"><label data-i18n="form.branches">Branches</label><input name="branches" type="number" min="1" required placeholder="1" /></div>
+            <div class="field"><label data-i18n="form.team">Team size (staff)</label><input name="teamSize" type="number" min="1" required placeholder="6" /></div>
           </div>
         </div>
 
@@ -770,12 +770,12 @@
         <div class="form-section">
           <div class="section-label" data-i18n="form.s4">4. How can we reach you?</div>
           <div class="form-row">
-            <div class="field"><label data-i18n="form.name">Your name</label><input type="text" required /></div>
-            <div class="field"><label data-i18n="form.role">Your role</label><input type="text" data-i18n-ph="form.role.ph" placeholder="Owner, Manager..." /></div>
+            <div class="field"><label data-i18n="form.name">Your name</label><input name="fullName" type="text" required /></div>
+            <div class="field"><label data-i18n="form.role">Your role</label><input name="role" type="text" data-i18n-ph="form.role.ph" placeholder="Owner, Manager..." /></div>
           </div>
           <div class="form-row">
-            <div class="field"><label data-i18n="form.email">Email</label><input type="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" lang="en" required placeholder="you@practice.com" /></div>
-            <div class="field"><label data-i18n="form.phone">Phone</label><input type="tel" required placeholder="+66 8x xxx xxxx" /></div>
+            <div class="field"><label data-i18n="form.email">Email</label><input name="email" type="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" lang="en" required placeholder="you@practice.com" /></div>
+            <div class="field"><label data-i18n="form.phone">Phone</label><input name="phone" type="tel" required placeholder="+66 8x xxx xxxx" /></div>
           </div>
         </div>
 
@@ -1131,9 +1131,25 @@ document.querySelectorAll('.lang-btn').forEach(function(b){
   b.addEventListener('click', function(){ setLang(b.dataset.lang); });
 });
 
+// TRISHA: paste your Apps Script Web app URL between the quotes below to activate
+// lead capture. See valixon/products/apps-script/README.md for setup steps.
+const LEADS_ENDPOINT = '';
+
 function submitHR(e){
   e.preventDefault();
-  document.getElementById('hrForm').style.display = 'none';
+  var form = document.getElementById('hrForm');
+  var payload = { source: 'hr', lang: document.documentElement.lang || 'en' };
+  var fd = new FormData(form);
+  fd.forEach(function(v, k){
+    if(k === 'bonus') payload.bonusProcess = v;
+    else payload[k] = v;
+  });
+  if (LEADS_ENDPOINT) {
+    try {
+      fetch(LEADS_ENDPOINT, {method:'POST', mode:'no-cors', body: JSON.stringify(payload)}).catch(function(){});
+    } catch(err) {}
+  }
+  form.style.display = 'none';
   document.getElementById('hrSuccess').style.display = 'block';
   document.getElementById('offer').scrollIntoView({behavior:'smooth'});
   return false;
