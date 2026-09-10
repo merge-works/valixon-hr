@@ -40,8 +40,9 @@
   nav{position:sticky;top:0;z-index:50;background:rgba(246,249,251,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1140px;margin:0 auto;gap:18px;}
   .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;letter-spacing:-.5px;color:var(--navy);}
-  .logo-mark{width:34px;height:34px;border-radius:9px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .logo-mark{width:34px;height:34px;border-radius:9px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
   .logo-mark svg{width:20px;height:20px;}
+  .logo-mark img{width:100%;height:100%;object-fit:cover;display:block;}
   .logo-sub{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1.5px;margin-left:2px;padding:2px 6px;background:var(--mint);border-radius:5px;}
   .nav-links{display:flex;gap:28px;align-items:center;}
   .nav-links a{font-size:15px;font-weight:500;color:var(--muted);transition:color .15s;}
@@ -242,7 +243,8 @@
 
   /* ABOUT */
   .about-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:48px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;box-shadow:var(--shadow-sm);}
-  .about-photo{width:130px;height:130px;border-radius:24px;flex-shrink:0;background:linear-gradient(160deg,var(--teal),var(--navy));display:flex;align-items:center;justify-content:center;color:#fff;font-size:44px;font-weight:800;}
+  .about-photo{width:140px;height:140px;border-radius:24px;flex-shrink:0;background:linear-gradient(160deg,var(--teal),var(--navy));display:flex;align-items:center;justify-content:center;color:#fff;font-size:44px;font-weight:800;overflow:hidden;}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;}
   .about-card .quote{font-size:21px;font-weight:600;line-height:1.5;letter-spacing:-.3px;margin-bottom:18px;}
   body.th .about-card .quote{font-size:19px;line-height:1.7;letter-spacing:0;}
   .about-author{font-weight:800;font-size:16px;}
@@ -294,7 +296,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">
-      <span class="logo-mark"><svg viewBox="0 0 64 64"><path d="M14 14h12l6 24 6-24h12L38 50h-12z" fill="#8F1D3D"/></svg></span>
+      <span class="logo-mark"><img src="assets/logo.jpg" alt="Valixon" /></span>
       Valixon <span class="logo-sub">HR</span>
     </a>
     <div class="nav-links">
@@ -669,7 +671,7 @@
 <section class="section" id="about" style="background:#fff;">
   <div class="wrap">
     <div class="about-card">
-      <div class="about-photo">K</div>
+      <div class="about-photo"><img src="assets/kook-2.jpg" alt="Dr. Nitthakarn Detkhrut, DDS" /></div>
       <div>
         <div class="kicker" data-i18n="about.kicker">Built by dentists, for dentists</div>
         <p class="quote" data-i18n="about.quote">"Bonuses shouldn't feel political. We built Valixon HR so every clinic can reward the right behaviours, with input from the whole team, and zero drama."</p>
@@ -686,7 +688,7 @@
     <div class="foot-grid">
       <div>
         <div class="foot-logo">
-          <span class="logo-mark"><svg viewBox="0 0 64 64"><path d="M14 14h12l6 24 6-24h12L38 50h-12z" fill="#8F1D3D"/></svg></span>
+          <span class="logo-mark"><img src="assets/logo.jpg" alt="Valixon" /></span>
           Valixon HR
         </div>
         <p class="foot-about" data-i18n="footer.about">The AI HR operating system for dental clinics. Peer + CEO reviews, weighted bonus reports. Thai and English.</p>
