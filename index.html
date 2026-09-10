@@ -206,6 +206,40 @@
   .legend-item.dim{flex-direction:column;gap:2px;}
   .legend-item.dim .d{font-weight:500;color:var(--muted);font-size:13px;line-height:1.55;}
 
+  /* WHO IS THIS FOR strip */
+  .audience-sec{background:#fff;padding:72px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:960px;margin:36px auto 0;}
+  .audience-card{text-align:center;padding:22px 18px;border-radius:18px;transition:.15s;}
+  .audience-card:hover{background:var(--bg);}
+  .audience-icon{width:64px;height:64px;border-radius:18px;background:var(--mint);color:var(--teal-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+  .audience-icon svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .audience-card h4{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px;}
+  body.th .audience-card h4{font-size:17px;}
+  .audience-card p{font-size:14.5px;color:var(--muted);line-height:1.6;}
+
+  /* MEET DR KOOK testimonial band */
+  .meet-sec{background:radial-gradient(700px 400px at 30% 40%,rgba(169,43,76,.20),transparent),linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:96px 0;}
+  .meet-grid{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;max-width:1000px;margin:0 auto;}
+  .meet-photo{width:280px;height:340px;border-radius:24px;overflow:hidden;flex-shrink:0;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);position:relative;}
+  .meet-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;}
+  .meet-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(12,41,67,.35));pointer-events:none;}
+  .meet-tag{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.95);color:var(--teal-dark);font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;padding:6px 12px;border-radius:99px;z-index:2;}
+  .meet-body{flex:1;min-width:0;}
+  .meet-quote-mark{font-size:82px;line-height:0.6;color:var(--accent-hi);font-weight:900;font-family:Georgia,"Times New Roman",serif;margin-bottom:14px;height:36px;}
+  .meet-quote{font-size:23px;font-weight:600;line-height:1.5;letter-spacing:-.3px;color:#fff;margin-bottom:26px;}
+  body.th .meet-quote{font-size:19.5px;line-height:1.75;letter-spacing:0;}
+  .meet-author{font-weight:800;font-size:17px;color:#fff;}
+  .meet-role{font-size:14px;color:#F0BFC9;font-weight:600;margin-top:5px;}
+
+  /* TRUST indicators strip */
+  .trust-sec{background:var(--bg);padding:64px 0;}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;max-width:1000px;margin:0 auto;}
+  .trust-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:0 8px;}
+  .trust-ic{width:56px;height:56px;border-radius:16px;background:#fff;color:var(--teal-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px -8px rgba(143,29,61,.35);border:1px solid var(--line);}
+  .trust-ic svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .trust-item h5{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+  .trust-item p{font-size:13px;color:var(--muted);line-height:1.55;}
+
   /* OFFER */
   .offer-sec{background:radial-gradient(900px 420px at 15% 0%,rgba(169,43,76,.25),transparent),linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;}
   .offer-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start;}
@@ -267,8 +301,13 @@
   @media(max-width:900px){
     .hero-grid,.offer-grid{grid-template-columns:1fr;gap:40px;}
     .tier-grid{grid-template-columns:1fr;gap:32px;}
-    .dims-grid,.steps,.mini-steps{grid-template-columns:1fr;}
+    .dims-grid,.steps,.mini-steps,.audience-grid,.trust-grid{grid-template-columns:1fr;}
     .demo-hero-card{flex-direction:column;text-align:center;padding:26px 22px;}
+    .meet-grid{grid-template-columns:1fr;text-align:center;gap:34px;}
+    .meet-photo{margin:0 auto;width:220px;height:280px;}
+    .meet-sec{padding:72px 0;}
+    .trust-sec,.audience-sec{padding:56px 0;}
+    .trust-grid{gap:32px;}
     .nav-links{display:none;}
     .hero h1{font-size:36px;}
     body.th .hero h1{font-size:30px;}
@@ -364,6 +403,39 @@
   </div>
 </header>
 
+<!-- WHO IS THIS FOR strip -->
+<section class="audience-sec" id="who">
+  <div class="wrap">
+    <div class="head-center">
+      <div class="kicker" data-i18n="who.kicker">Made for dental clinics like yours</div>
+      <h2 data-i18n="who.title">Who is Valixon HR for?</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h4 data-i18n="who.a1.t">Solo clinic owners</h4>
+        <p data-i18n="who.a1.d">You're the CEO, HR manager, and lead dentist. Valixon HR gives you back your evenings.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"/></svg>
+        </div>
+        <h4 data-i18n="who.a2.t">Multi-branch groups</h4>
+        <p data-i18n="who.a2.d">Multiple locations mean multiple bonus meetings. Valixon HR standardises the process across every branch.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+        </div>
+        <h4 data-i18n="who.a3.t">Practice managers</h4>
+        <p data-i18n="who.a3.d">You need consistent, defensible bonus decisions. Valixon HR makes it fair, transparent, and monthly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TIERS -->
 <section class="section" id="tiers">
   <div class="wrap">
@@ -455,6 +527,22 @@
       <div class="step"><div class="num">2</div><h3 data-i18n="s2.t">Collect peer + CEO ratings</h3><p data-i18n="s2.d">Employees rate their peers anonymously. The owner or CEO submits their own executive scores separately.</p></div>
       <div class="step"><div class="num">3</div><h3 data-i18n="s3.t">Choose your weighting</h3><p data-i18n="s3.d">Pick how much weight to give the CEO vs the peer average. Corrects for any bias in either direction.</p></div>
       <div class="step"><div class="num">4</div><h3 data-i18n="s4.t">Get your bonus report</h3><p data-i18n="s4.d">Auto-generated summary you can share with the team and use to decide bonuses that same week.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEET DR KOOK testimonial band -->
+<section class="meet-sec" id="meet">
+  <div class="wrap meet-grid">
+    <div class="meet-photo">
+      <span class="meet-tag" data-i18n="meet.tag">Co-Founder</span>
+      <img src="assets/kook-1.jpg" alt="Dr. Nitthakarn Detkhrut, DDS" />
+    </div>
+    <div class="meet-body">
+      <div class="meet-quote-mark">&ldquo;</div>
+      <p class="meet-quote" data-i18n="meet.quote">In my own clinic, bonus season used to feel political. I built Valixon HR so every dental clinic can reward the right behaviours, with the whole team's input, and zero drama.</p>
+      <div class="meet-author" data-i18n="meet.author">Dr. Nitthakarn Detkhrut, DDS</div>
+      <div class="meet-role" data-i18n="meet.role">Co-Founder, Valixon · Practicing dentist</div>
     </div>
   </div>
 </section>
@@ -586,6 +674,42 @@
           <div class="legend-item dim"><span class="k" data-i18n="d6.t">Calm Under Pressure</span><span class="d" data-i18n="d6.d">...</span></div>
           <div class="legend-item dim"><span class="k" data-i18n="d7.t">Aesthetic &amp; Detail Orientation</span><span class="d" data-i18n="d7.d">...</span></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST indicators strip -->
+<section class="trust-sec">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-ic">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h5 data-i18n="tr.a.t">Anonymous by default</h5>
+        <p data-i18n="tr.a.d">Peer ratings never reveal who scored whom.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-ic">
+          <svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 7l7-4 7 4"/><path d="M3 12h6l-3-5-3 5z"/><path d="M15 12h6l-3-5-3 5z"/><path d="M3 12c0 1.66 1.34 3 3 3s3-1.34 3-3"/><path d="M15 12c0 1.66 1.34 3 3 3s3-1.34 3-3"/></svg>
+        </div>
+        <h5 data-i18n="tr.b.t">Weighted for fairness</h5>
+        <p data-i18n="tr.b.d">You pick the CEO/peer mix to correct any bias.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-ic">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
+        </div>
+        <h5 data-i18n="tr.c.t">Bilingual TH + EN</h5>
+        <p data-i18n="tr.c.d">Every touchpoint works in both languages.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-ic">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        <h5 data-i18n="tr.d.t">Dentist-designed</h5>
+        <p data-i18n="tr.d.d">Built with Dr. Nitthakarn Detkhrut, DDS.</p>
       </div>
     </div>
   </div>
@@ -742,6 +866,26 @@ const translations = {
     "hero.cta":"Get 45 Days Free","hero.cta2":"Try the Report Generator",
     "hero.note":"45 days free · No credit card · Bilingual TH and EN",
     "hero.trust":"Designed with Dr. Nitthakarn Detkhrut, DDS · Practicing dentist",
+    "who.kicker":"Made for dental clinics like yours",
+    "who.title":"Who is Valixon HR for?",
+    "who.a1.t":"Solo clinic owners",
+    "who.a1.d":"You're the CEO, HR manager, and lead dentist. Valixon HR gives you back your evenings.",
+    "who.a2.t":"Multi-branch groups",
+    "who.a2.d":"Multiple locations mean multiple bonus meetings. Valixon HR standardises the process across every branch.",
+    "who.a3.t":"Practice managers",
+    "who.a3.d":"You need consistent, defensible bonus decisions. Valixon HR makes it fair, transparent, and monthly.",
+    "meet.tag":"Co-Founder",
+    "meet.quote":"In my own clinic, bonus season used to feel political. I built Valixon HR so every dental clinic can reward the right behaviours, with the whole team's input, and zero drama.",
+    "meet.author":"Dr. Nitthakarn Detkhrut, DDS",
+    "meet.role":"Co-Founder, Valixon · Practicing dentist",
+    "tr.a.t":"Anonymous by default",
+    "tr.a.d":"Peer ratings never reveal who scored whom.",
+    "tr.b.t":"Weighted for fairness",
+    "tr.b.d":"You pick the CEO/peer mix to correct any bias.",
+    "tr.c.t":"Bilingual TH + EN",
+    "tr.c.d":"Every touchpoint works in both languages.",
+    "tr.d.t":"Dentist-designed",
+    "tr.d.d":"Built with Dr. Nitthakarn Detkhrut, DDS.",
     "rc.title":"Monthly Team Report · July","rc.date":"Weighted 60% CEO · 40% Peer",
     "rc.emp":"Employee","rc.score":"Score",
     "rc.footer":"Auto-generated from anonymous peer + CEO ratings","rc.badge":"days free",
@@ -845,6 +989,26 @@ const translations = {
     "hero.cta":"รับฟรี 45 วัน","hero.cta2":"ทดลองใช้เครื่องมือสร้างรายงาน",
     "hero.note":"ฟรี 45 วัน · ไม่ต้องใช้บัตรเครดิต · รองรับทั้งไทยและอังกฤษ",
     "hero.trust":"ออกแบบร่วมกับ ทพญ.นิษฐกานต์ เดชครุธ · ทันตแพทย์ผู้ปฏิบัติงานจริง",
+    "who.kicker":"สร้างขึ้นเพื่อคลินิกทันตกรรมแบบคุณ",
+    "who.title":"Valixon HR เหมาะกับใคร?",
+    "who.a1.t":"เจ้าของคลินิกเดี่ยว",
+    "who.a1.d":"คุณเป็นทั้งซีอีโอ ทั้ง HR และทันตแพทย์หลัก Valixon HR ช่วยคืนเวลาให้คุณกลับบ้านตรงเวลา",
+    "who.a2.t":"กลุ่มคลินิกหลายสาขา",
+    "who.a2.d":"หลายสาขาก็หลายรอบประชุมโบนัส Valixon HR ทำให้กระบวนการเป็นมาตรฐานเดียวกันทุกสาขา",
+    "who.a3.t":"ผู้จัดการคลินิก",
+    "who.a3.d":"คุณต้องการการตัดสินโบนัสที่สม่ำเสมอและอธิบายได้ Valixon HR ทำให้ยุติธรรม โปร่งใส และทำได้ทุกเดือน",
+    "meet.tag":"ผู้ร่วมก่อตั้ง",
+    "meet.quote":"ในคลินิกของหมอเอง ช่วงโบนัสเคยรู้สึกเหมือนการเมือง หมอสร้าง Valixon HR ขึ้นมาเพื่อให้ทุกคลินิกทันตกรรมให้รางวัลกับพฤติกรรมที่ถูกต้อง โดยมีความเห็นจากทั้งทีม และไม่มีดราม่า",
+    "meet.author":"ทพญ.นิษฐกานต์ เดชครุธ",
+    "meet.role":"ผู้ร่วมก่อตั้ง Valixon · ทันตแพทย์ผู้ปฏิบัติงานจริง",
+    "tr.a.t":"ไม่เปิดเผยชื่อโดยอัตโนมัติ",
+    "tr.a.d":"คะแนนจากเพื่อนร่วมงานไม่เปิดเผยว่าใครให้คะแนนใคร",
+    "tr.b.t":"ถ่วงน้ำหนักเพื่อความยุติธรรม",
+    "tr.b.d":"คุณเลือกน้ำหนัก CEO และเพื่อนร่วมงานเพื่อแก้อคติได้",
+    "tr.c.t":"รองรับไทยและอังกฤษ",
+    "tr.c.d":"ทุกจุดสัมผัสใช้งานได้ทั้งสองภาษา",
+    "tr.d.t":"ออกแบบโดยทันตแพทย์",
+    "tr.d.d":"สร้างร่วมกับ ทพญ.นิษฐกานต์ เดชครุธ",
     "rc.title":"รายงานทีมประจำเดือน · กรกฎาคม","rc.date":"ถ่วงน้ำหนัก CEO 60% · เพื่อนร่วมงาน 40%",
     "rc.emp":"พนักงาน","rc.score":"คะแนน",
     "rc.footer":"สร้างอัตโนมัติจากการประเมินของเพื่อนร่วมงาน + CEO แบบไม่เปิดเผยชื่อ","rc.badge":"วันฟรี",
