@@ -240,6 +240,28 @@
   .trust-item h5{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:4px;}
   .trust-item p{font-size:13px;color:var(--muted);line-height:1.55;}
 
+  /* RECRUITMENT band */
+  .recruit-sec{background:#fff;padding:88px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .recruit-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto;}
+  .recruit-badge{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--teal-dark);font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;padding:5px 12px;border-radius:99px;margin-bottom:14px;}
+  body.th .recruit-badge{letter-spacing:.5px;font-size:12.5px;}
+  .recruit-body h2{font-size:34px;font-weight:800;color:var(--navy);letter-spacing:-.8px;line-height:1.15;margin-bottom:14px;}
+  body.th .recruit-body h2{font-size:28px;letter-spacing:0;line-height:1.4;}
+  .recruit-body p.rsub{font-size:16.5px;color:var(--muted);line-height:1.6;margin-bottom:22px;}
+  .recruit-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:26px;}
+  .recruit-features li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--ink);line-height:1.55;}
+  .recruit-features .rc{width:22px;height:22px;border-radius:50%;background:var(--mint);color:var(--teal-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+  .recruit-features .rc svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+  .recruit-features strong{font-weight:700;color:var(--navy);}
+  .recruit-visual{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);border-radius:24px;padding:36px;color:#fff;position:relative;overflow:hidden;box-shadow:0 30px 60px -25px rgba(14,42,71,.5);}
+  .recruit-visual::before{content:"";position:absolute;top:-50px;right:-50px;width:250px;height:250px;background:radial-gradient(circle,rgba(169,43,76,.35),transparent 70%);pointer-events:none;}
+  .recruit-visual h3{font-size:19px;font-weight:800;margin-bottom:8px;position:relative;color:#fff;}
+  .recruit-visual p.rvsub{font-size:14px;color:#C4D2E0;margin-bottom:22px;position:relative;line-height:1.5;}
+  .recruit-roles{display:flex;flex-direction:column;gap:10px;position:relative;}
+  .recruit-role{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;font-size:14px;font-weight:600;}
+  .recruit-role .rr-ic{width:32px;height:32px;border-radius:9px;background:rgba(169,43,76,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .recruit-role .rr-ic svg{width:16px;height:16px;stroke:#F0BFC9;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
   /* OFFER */
   .offer-sec{background:radial-gradient(900px 420px at 15% 0%,rgba(169,43,76,.25),transparent),linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;}
   .offer-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start;}
@@ -301,7 +323,10 @@
   @media(max-width:900px){
     .hero-grid,.offer-grid{grid-template-columns:1fr;gap:40px;}
     .tier-grid{grid-template-columns:1fr;gap:32px;}
-    .dims-grid,.steps,.mini-steps,.audience-grid,.trust-grid{grid-template-columns:1fr;}
+    .dims-grid,.steps,.mini-steps,.audience-grid,.trust-grid,.recruit-grid{grid-template-columns:1fr;}
+    .recruit-body h2{font-size:26px;}
+    .recruit-visual{padding:26px;}
+    .recruit-sec{padding:64px 0;}
     .demo-hero-card{flex-direction:column;text-align:center;padding:26px 22px;}
     .meet-grid{grid-template-columns:1fr;text-align:center;gap:34px;}
     .meet-photo{margin:0 auto;width:220px;height:280px;}
@@ -343,6 +368,7 @@
       <a href="#dimensions" data-i18n="nav.dims">Rubric</a>
       <a href="#how" data-i18n="nav.how">How it works</a>
       <a href="#tool" data-i18n="nav.tool">Report Tool</a>
+      <a href="https://merge-works.github.io/valixon-hub/" target="_blank" rel="noopener" data-i18n="nav.platform">Platform ↗</a>
     </div>
     <div class="nav-right">
       <div class="lang-switch">
@@ -527,6 +553,33 @@
       <div class="step"><div class="num">2</div><h3 data-i18n="s2.t">Collect peer + CEO ratings</h3><p data-i18n="s2.d">Employees rate their peers anonymously. The owner or CEO submits their own executive scores separately.</p></div>
       <div class="step"><div class="num">3</div><h3 data-i18n="s3.t">Choose your weighting</h3><p data-i18n="s3.d">Pick how much weight to give the CEO vs the peer average. Corrects for any bias in either direction.</p></div>
       <div class="step"><div class="num">4</div><h3 data-i18n="s4.t">Get your bonus report</h3><p data-i18n="s4.d">Auto-generated summary you can share with the team and use to decide bonuses that same week.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RECRUITMENT band (Valixon Talent Scout) -->
+<section class="recruit-sec" id="recruit">
+  <div class="wrap recruit-grid">
+    <div class="recruit-body">
+      <span class="recruit-badge" data-i18n="rec.badge">The other half of HR</span>
+      <h2 data-i18n="rec.title">Hiring your next dental team member? Meet Valixon Talent Scout.</h2>
+      <p class="rsub" data-i18n="rec.sub">Post a role once. Our AI screens, ranks, and shortlists candidates so you spend one hour on hiring instead of ten. Purpose-built for dental clinics.</p>
+      <ul class="recruit-features">
+        <li><span class="rc"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="rec.f1"><strong>Post an opening in 3 minutes.</strong> Receptionist, dental assistant, dentist, or manager.</span></li>
+        <li><span class="rc"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="rec.f2"><strong>AI screening + ranking.</strong> Candidates scored on fit before you spend a minute reading resumes.</span></li>
+        <li><span class="rc"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="rec.f3"><strong>Shortlist to interview.</strong> Only the top 3 to 5 candidates hit your calendar.</span></li>
+      </ul>
+      <a href="https://talent-scout-buddy-18.lovable.app" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="rec.cta">Open Valixon Talent Scout ↗</a>
+    </div>
+    <div class="recruit-visual">
+      <h3 data-i18n="rec.rv.title">Roles we hire for</h3>
+      <p class="rvsub" data-i18n="rec.rv.sub">Every dental clinic role, screened by an AI that understands your practice.</p>
+      <div class="recruit-roles">
+        <div class="recruit-role"><span class="rr-ic"><svg viewBox="0 0 24 24"><path d="M4 4h4v4H4zM10 4h10M10 8h10M10 12h6M4 12h4v4H4zM10 16h10M4 20h16"/></svg></span><span data-i18n="rec.rv.r1">Dental receptionist</span></div>
+        <div class="recruit-role"><span class="rr-ic"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span data-i18n="rec.rv.r2">Dental assistant</span></div>
+        <div class="recruit-role"><span class="rr-ic"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/></svg></span><span data-i18n="rec.rv.r3">General dentist</span></div>
+        <div class="recruit-role"><span class="rr-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span><span data-i18n="rec.rv.r4">Specialist &amp; clinic manager</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -859,7 +912,17 @@ const SAMPLE_CEO = `Timestamp\tLuxury Service Mindset [น้ำ]\tLuxury Servic
 
 const translations = {
   en: {
-    "nav.tiers":"Plans","nav.dims":"Rubric","nav.how":"How it works","nav.tool":"Report Tool","nav.cta":"Get 45 Days Free",
+    "nav.tiers":"Plans","nav.dims":"Rubric","nav.how":"How it works","nav.tool":"Report Tool","nav.platform":"Platform ↗","nav.cta":"Get 45 Days Free",
+    "rec.badge":"The other half of HR",
+    "rec.title":"Hiring your next dental team member? Meet Valixon Talent Scout.",
+    "rec.sub":"Post a role once. Our AI screens, ranks, and shortlists candidates so you spend one hour on hiring instead of ten. Purpose-built for dental clinics.",
+    "rec.f1":"<strong>Post an opening in 3 minutes.</strong> Receptionist, dental assistant, dentist, or manager.",
+    "rec.f2":"<strong>AI screening + ranking.</strong> Candidates scored on fit before you spend a minute reading resumes.",
+    "rec.f3":"<strong>Shortlist to interview.</strong> Only the top 3 to 5 candidates hit your calendar.",
+    "rec.cta":"Open Valixon Talent Scout ↗",
+    "rec.rv.title":"Roles we hire for",
+    "rec.rv.sub":"Every dental clinic role, screened by an AI that understands your practice.",
+    "rec.rv.r1":"Dental receptionist","rec.rv.r2":"Dental assistant","rec.rv.r3":"General dentist","rec.rv.r4":"Specialist &amp; clinic manager",
     "hero.badge":"✦ Valixon HR · The AI HR Operating System",
     "hero.title":"Peer evaluations, weighted bonuses, and team culture. <span class='hl'>On autopilot.</span>",
     "hero.sub":"Valixon HR runs your monthly team review, blends peer and executive scores with the weighting your clinic chooses, and delivers a shareable bonus report. Built for dental clinics. Bilingual Thai and English.",
@@ -982,7 +1045,17 @@ const translations = {
     "footer.made":"คืนหมอให้คนไข้ · Return dentists to their patients."
   },
   th: {
-    "nav.tiers":"แพ็คเกจ","nav.dims":"เกณฑ์ประเมิน","nav.how":"วิธีการทำงาน","nav.tool":"เครื่องมือสร้างรายงาน","nav.cta":"รับฟรี 45 วัน",
+    "nav.tiers":"แพ็คเกจ","nav.dims":"เกณฑ์ประเมิน","nav.how":"วิธีการทำงาน","nav.tool":"เครื่องมือสร้างรายงาน","nav.platform":"แพลตฟอร์ม ↗","nav.cta":"รับฟรี 45 วัน",
+    "rec.badge":"อีกครึ่งหนึ่งของ HR",
+    "rec.title":"กำลังหาสมาชิกทีมทันตกรรมคนใหม่? มาที่ Valixon Talent Scout",
+    "rec.sub":"ประกาศตำแหน่งครั้งเดียว AI ของเราคัดกรอง จัดอันดับ และคัดลิสต์ผู้สมัคร คุณใช้เวลาสัมภาษณ์แค่ 1 ชั่วโมง ไม่ใช่ 10 ออกแบบเฉพาะสำหรับคลินิกทันตกรรม",
+    "rec.f1":"<strong>ประกาศตำแหน่งใน 3 นาที</strong> Reception ผู้ช่วย ทันตแพทย์ หรือผู้จัดการ",
+    "rec.f2":"<strong>AI คัดกรองและจัดอันดับ</strong> ผู้สมัครถูกให้คะแนนความเหมาะสมก่อนคุณจะเปิดอ่านเรซูเม่",
+    "rec.f3":"<strong>คัดลิสต์เพื่อสัมภาษณ์</strong> เฉพาะ 3 ถึง 5 คนแรกที่ได้เข้าปฏิทินคุณ",
+    "rec.cta":"เปิด Valixon Talent Scout ↗",
+    "rec.rv.title":"ตำแหน่งที่เราหาให้",
+    "rec.rv.sub":"ทุกตำแหน่งในคลินิกทันตกรรม คัดกรองโดย AI ที่เข้าใจการทำงานของคลินิกคุณ",
+    "rec.rv.r1":"Reception ทันตกรรม","rec.rv.r2":"ผู้ช่วยทันตแพทย์","rec.rv.r3":"ทันตแพทย์ทั่วไป","rec.rv.r4":"ผู้เชี่ยวชาญและผู้จัดการคลินิก",
     "hero.badge":"✦ Valixon HR · ระบบปฏิบัติการ HR ด้วย AI",
     "hero.title":"ประเมินเพื่อนร่วมงาน คำนวณโบนัสแบบถ่วงน้ำหนัก และดูแลวัฒนธรรมทีม <span class='hl'>อัตโนมัติ</span>",
     "hero.sub":"Valixon HR ช่วยจัดการรอบประเมินรายเดือน ผสมคะแนนจากทั้งเพื่อนร่วมงานและผู้บริหารตามน้ำหนักที่คลินิกเลือก และสร้างรายงานโบนัสที่แชร์ได้ทันที ออกแบบเพื่อคลินิกทันตกรรม ทั้งภาษาไทยและอังกฤษ",
