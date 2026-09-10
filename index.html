@@ -69,6 +69,9 @@
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
   .hero-note{margin-top:18px;font-size:13.5px;color:#8FA4B8;display:flex;align-items:center;gap:8px;}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);display:inline-block;}
+  .hero-trust{display:inline-flex;align-items:center;gap:9px;margin-top:14px;padding:8px 15px 8px 8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:99px;font-size:13px;color:#E8F0F9;font-weight:600;}
+  .hero-trust-ic{width:22px;height:22px;border-radius:50%;background:var(--teal);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .hero-trust-ic svg{width:12px;height:12px;}
 
   /* REPORT PREVIEW CARD (in hero) */
   .report-card{background:#fff;border-radius:22px;padding:22px;box-shadow:0 40px 80px -30px rgba(0,0,0,.55);position:relative;color:var(--ink);}
@@ -322,6 +325,10 @@
         <a href="#tool" class="btn btn-light" data-i18n="hero.cta2">Try the Report Generator</a>
       </div>
       <p class="hero-note"><span class="dot"></span><span data-i18n="hero.note">45 days free · No credit card · Bilingual TH and EN</span></p>
+      <div class="hero-trust">
+        <span class="hero-trust-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span data-i18n="hero.trust">Designed with Dr. Nitthakarn Detkhrut, DDS · Practicing dentist</span>
+      </div>
     </div>
 
     <div class="report-card">
@@ -641,7 +648,7 @@
             <div class="field"><label data-i18n="form.role">Your role</label><input type="text" data-i18n-ph="form.role.ph" placeholder="Owner, Manager..." /></div>
           </div>
           <div class="form-row">
-            <div class="field"><label data-i18n="form.email">Email</label><input type="email" required placeholder="you@practice.com" /></div>
+            <div class="field"><label data-i18n="form.email">Email</label><input type="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" lang="en" required placeholder="you@practice.com" /></div>
             <div class="field"><label data-i18n="form.phone">Phone</label><input type="tel" required placeholder="+66 8x xxx xxxx" /></div>
           </div>
         </div>
@@ -705,7 +712,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span data-i18n="footer.rights">© 2026 Valixon. All rights reserved.</span>
+      <span data-i18n="footer.rights">© 2026 Valixon Co., Ltd. · บริษัท วาลิกซอน จำกัด · All rights reserved.</span>
       <span data-i18n="footer.made">คืนหมอให้คนไข้ · Return dentists to their patients.</span>
     </div>
   </div>
@@ -732,6 +739,7 @@ const translations = {
     "hero.sub":"Valixon HR runs your monthly team review, blends peer and executive scores with the weighting your clinic chooses, and delivers a shareable bonus report. Built for dental clinics. Bilingual Thai and English.",
     "hero.cta":"Get 45 Days Free","hero.cta2":"Try the Report Generator",
     "hero.note":"45 days free · No credit card · Bilingual TH and EN",
+    "hero.trust":"Designed with Dr. Nitthakarn Detkhrut, DDS · Practicing dentist",
     "rc.title":"Monthly Team Report · July","rc.date":"Weighted 60% CEO · 40% Peer",
     "rc.emp":"Employee","rc.score":"Score",
     "rc.footer":"Auto-generated from anonymous peer + CEO ratings","rc.badge":"days free",
@@ -824,7 +832,7 @@ const translations = {
     "footer.about":"The AI HR operating system for dental clinics. Peer + CEO reviews, weighted bonus reports. Thai and English.",
     "footer.explore":"Explore","footer.contact":"Get in touch","footer.line":"LINE: @valixon",
     "footer.clinicos":"Valixon Clinic OS",
-    "footer.rights":"© 2026 Valixon. All rights reserved.",
+    "footer.rights":"© 2026 Valixon Co., Ltd. · บริษัท วาลิกซอน จำกัด · All rights reserved.",
     "footer.made":"คืนหมอให้คนไข้ · Return dentists to their patients."
   },
   th: {
@@ -834,6 +842,7 @@ const translations = {
     "hero.sub":"Valixon HR ช่วยจัดการรอบประเมินรายเดือน ผสมคะแนนจากทั้งเพื่อนร่วมงานและผู้บริหารตามน้ำหนักที่คลินิกเลือก และสร้างรายงานโบนัสที่แชร์ได้ทันที ออกแบบเพื่อคลินิกทันตกรรม ทั้งภาษาไทยและอังกฤษ",
     "hero.cta":"รับฟรี 45 วัน","hero.cta2":"ทดลองใช้เครื่องมือสร้างรายงาน",
     "hero.note":"ฟรี 45 วัน · ไม่ต้องใช้บัตรเครดิต · รองรับทั้งไทยและอังกฤษ",
+    "hero.trust":"ออกแบบร่วมกับ ทพญ.นิษฐกานต์ เดชครุธ · ทันตแพทย์ผู้ปฏิบัติงานจริง",
     "rc.title":"รายงานทีมประจำเดือน · กรกฎาคม","rc.date":"ถ่วงน้ำหนัก CEO 60% · เพื่อนร่วมงาน 40%",
     "rc.emp":"พนักงาน","rc.score":"คะแนน",
     "rc.footer":"สร้างอัตโนมัติจากการประเมินของเพื่อนร่วมงาน + CEO แบบไม่เปิดเผยชื่อ","rc.badge":"วันฟรี",
@@ -926,7 +935,7 @@ const translations = {
     "footer.about":"ระบบปฏิบัติการ HR ด้วย AI สำหรับคลินิกทันตกรรม ประเมินโดยเพื่อนร่วมงาน + CEO รายงานโบนัสแบบถ่วงน้ำหนัก ทั้งไทยและอังกฤษ",
     "footer.explore":"สำรวจ","footer.contact":"ติดต่อเรา","footer.line":"LINE: @valixon",
     "footer.clinicos":"Valixon Clinic OS",
-    "footer.rights":"© 2026 Valixon สงวนลิขสิทธิ์",
+    "footer.rights":"© 2026 บริษัท วาลิกซอน จำกัด · Valixon Co., Ltd. สงวนลิขสิทธิ์",
     "footer.made":"คืนหมอให้คนไข้ · Return dentists to their patients."
   }
 };
